@@ -1,7 +1,4 @@
 import { useState} from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { addContact } from '../../Redux/contacts/contact-actions';
-// import { getContacts } from '../../Redux/contacts/contact-selectors';
 import { useAddContactMutation } from 'Redux/contacts/contactsApi';
 import { useFetchContactsQuery } from 'Redux/contacts/contactsApi';
 import s from './ContactForm.module.css';
@@ -17,7 +14,7 @@ export default function ContactForm() {
     e.preventDefault();
     if (
       data.find(
-        contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+        contact => contact.name.toLowerCase() === name.toLocaleLowerCase()
       )
     ) {
       
