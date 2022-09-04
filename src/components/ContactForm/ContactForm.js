@@ -14,7 +14,7 @@ export default function ContactForm() {
     e.preventDefault();
     if (
       data.find(
-        contact => contact.name.toLowerCase() === name.toLocaleLowerCase()
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
       
