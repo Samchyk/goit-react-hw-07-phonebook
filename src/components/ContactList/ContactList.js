@@ -11,7 +11,7 @@ export default function ContactList() {
   const getVisibleContacts =
     data &&
     data.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+      contact.name?.toLowerCase().includes(filter?.toLowerCase())
     );
   return (
     <div>

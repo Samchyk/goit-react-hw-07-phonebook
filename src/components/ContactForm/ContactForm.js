@@ -1,8 +1,7 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { useAddContactMutation } from 'Redux/contacts/contactsApi';
 import { useFetchContactsQuery } from 'Redux/contacts/contactsApi';
 import s from './ContactForm.module.css';
-
 
 export default function ContactForm() {
   const { data } = useFetchContactsQuery();
@@ -13,11 +12,8 @@ export default function ContactForm() {
   const onSubmitForm = async e => {
     e.preventDefault();
     if (
-      data.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      )
+      data.find(contact => contact.name?.toLowerCase() === name?.toLowerCase())
     ) {
-      
       return;
     }
     await addContact({ name, phone });
